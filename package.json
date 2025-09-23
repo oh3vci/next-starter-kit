@@ -6,14 +6,18 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "15.5.4",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "tailwind-merge": "3.3.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "19.8.1",
+    "@commitlint/config-conventional": "19.8.1",
     "@eslint/eslintrc": "3.3.1",
     "@tailwindcss/postcss": "4.1.13",
     "@types/node": "20.19.17",
@@ -21,6 +25,12 @@
     "@types/react-dom": "19.1.9",
     "eslint": "9.35.0",
     "eslint-config-next": "15.5.4",
+    "eslint-plugin-perfectionist": "4.15.0",
+    "eslint-plugin-prettier": "5.5.4",
+    "husky": "9.1.7",
+    "lint-staged": "16.2.0",
+    "prettier": "3.6.2",
+    "prettier-plugin-tailwindcss": "0.6.14",
     "tailwindcss": "4.1.13",
     "typescript": "5.9.2"
   }
