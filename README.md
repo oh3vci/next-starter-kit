@@ -1,8 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Starter Kit
+
+A production-ready Next.js starter kit with pre-configured development tools and best practices.
+
+## Features
+
+### 🛠 Pre-configured Development Tools
+
+- **ESLint**: Code quality and consistency checks with Next.js best practices
+  - Next.js Core Web Vitals rules
+  - TypeScript support
+  - Import plugin for module import validation
+  - Perfectionist plugin for automatic sorting (imports, objects, interfaces, JSX props)
+  - Prettier integration for consistent formatting
+- **Prettier**: Automatic code formatting with Tailwind CSS class sorting
+- **Husky & lint-staged**: Pre-commit hooks for code validation
+- **Commitlint**: Enforces consistent commit message conventions
+
+### 🎨 Styling
+
+- **Tailwind CSS v4**: Latest utility-first CSS framework
+
+### 🔧 Build Optimization
+
+- **Turbopack**: Fast development server and build performance
+
+### 🎯 SVG Icon System
+
+The project includes an efficient SVG icon management system with a reusable `Icon` component.
+
+#### Usage
+
+1. Add SVG icons as `<symbol>` elements in `/public/assets/icons.svg`
+2. Assign a unique `id` to each symbol
+3. Pass the symbol id to the Icon component's `name` prop
+
+```tsx
+// Add to icons.svg
+<symbol id="my-icon" viewBox="0 0 16 16">
+  <!-- SVG paths -->
+</symbol>
+
+// Use in component
+import Icon from '@/app/components/Icon'
+
+<Icon name="my-icon" width={24} height={24} />
+```
 
 ## Getting Started
 
-First, run the development server:
+### Installation
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+### Development Server
 
 ```bash
 npm run dev
@@ -10,27 +66,68 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
+```
 
-## Learn More
+### Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+# or
+yarn start
+# or
+pnpm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `npm run dev`: Start development server (with Turbopack)
+- `npm run build`: Create production build
+- `npm run start`: Start production server
+- `npm run lint`: Run ESLint
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+next-starter-kit/
+├── public/
+│   └── assets/
+│       └── icons.svg           # SVG icon
+├── src/
+│   └── app/
+│       ├── components/
+│       │   ├── Icon.tsx        # Icon component
+│       │   └── index.ts        # Component exports
+│       ├── layout.tsx
+│       └── page.tsx
+├── .husky/                     # Git hooks
+├── .lintstagedrc.mjs          # Lint-staged configuration
+├── commitlint.config.mjs      # Commitlint configuration
+├── eslint.config.mjs          # ESLint flat config
+├── next.config.ts             # Next.js configuration
+├── postcss.config.mjs         # PostCSS configuration
+├── prettier.config.mjs        # Prettier configuration
+└── tsconfig.json              # TypeScript configuration
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Tech Stack
+
+- **Framework**: Next.js 15.5
+- **Language**: TypeScript 5.9
+- **Styling**: Tailwind CSS 4.1
+- **React**: 19.1
+
+## License
+
+MIT
