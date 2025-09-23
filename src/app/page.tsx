@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { Icon } from "~/components";
+
 export default function Home() {
   return (
     <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-sans sm:p-20">
@@ -58,13 +60,7 @@ export default function Home() {
           rel="noopener noreferrer"
           target="_blank"
         >
-          <Image
-            aria-hidden
-            alt="File icon"
-            height={16}
-            src="/file.svg"
-            width={16}
-          />
+          <Icon className="text-[#666]" name="file" />
           Learn
         </a>
         <a
@@ -73,13 +69,7 @@ export default function Home() {
           rel="noopener noreferrer"
           target="_blank"
         >
-          <Image
-            aria-hidden
-            alt="Window icon"
-            height={16}
-            src="/window.svg"
-            width={16}
-          />
+          <Icon className="text-[#666]" name="window" />
           Examples
         </a>
         <a
@@ -88,13 +78,7 @@ export default function Home() {
           rel="noopener noreferrer"
           target="_blank"
         >
-          <Image
-            aria-hidden
-            alt="Globe icon"
-            height={16}
-            src="/globe.svg"
-            width={16}
-          />
+          <Icon className="text-[#666]" name="globe" />
           Go to nextjs.org →
         </a>
       </footer>
